@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GreenCharge | Booking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="booking-page">
+
+<!-- ===== HEADER ===== -->
+<header class="topbar">
+  <div class="logo">
+    <svg width="34" height="34" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" fill="#1fa36b"/>
+      <path d="M55 15 L35 55 H50 L45 85 L70 45 H55 Z" fill="#ffffff"/>
+    </svg>
+    <span>GreenCharge</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="stations.html">Nearby Stations</a>
+    <a href="history.html">History</a>
+    <a href="about.html">About</a>
+    <button class="logout-btn">Logout</button>
+  </nav>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main class="booking-container">
+
+<h1 class="page-title">Book Charging Slot</h1>
+
+<div class="booking-card">
+
+  <!-- TIME -->
+  <label class="field-title">⏰ Time Slot</label>
+  <input type="datetime-local" class="input-field">
+
+  <!-- CHARGER -->
+  <label class="field-title">🔌 Charger Type</label>
+  <select class="input-field">
+    <option>Fast Charger</option>
+    <option>Normal Charger</option>
+  </select>
+
+  <!-- PAYMENT -->
+  <label class="field-title">💳 Payment Method</label>
+
+  <div class="payment-options">
+    <label class="payment-card">
+      <input type="radio" name="pay" onclick="showUPI()">
+      <span>UPI</span>
+    </label>
+
+    <label class="payment-card">
+      <input type="radio" name="pay" onclick="showCard()">
+      <span>Credit Card</span>
+    </label>
+
+    <label class="payment-card">
+      <input type="radio" name="pay" onclick="showPayPal()">
+      <span>PayPal</span>
+    </label>
+
+    <label class="payment-card">
+      <input type="radio" name="pay" onclick="showApple()">
+      <span>Apple Pay</span>
+    </label>
+  </div>
+
+  <!-- CARD BOX -->
+  <div id="cardBox" class="payment-box">
+   <!-- Card Holder Name (ONLY TEXT) -->
+<input
+  type="text"
+  placeholder="Card Holder Name"
+  oninput="onlyText(this)"
+>
+<input type="text" placeholder="Card Number" maxlength="19" oninput="formatCardNumber(this)">
+    <input type="text" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)">
+    <!-- CVV (ONLY NUMBERS) -->
+<input
+  type="password"
+  placeholder="CVV"
+  inputmode="numeric"
+  maxlength="3"
+  oninput="onlyNumbers(this)"
+>
+    <button class="primary-btn">Pay Securely</button>
+  </div>
+
+  <!-- UPI -->
+  <div id="upiBox" class="payment-box">
+    <p class="note">UPI apps will open on mobile device</p>
+    <button class="primary-btn" onclick="upiPay()">Pay via UPI</button>
+  </div>
+
+  <!-- PAYPAL -->
+  <div id="paypalBox" class="payment-box">
+    <p class="note">Redirecting to PayPal</p>
+    <button class="primary-btn">Continue to PayPal</button>
+  </div>
+
+  <!-- APPLE -->
+  <div id="appleBox" class="payment-box">
+    <p class="note">Apple Pay supported devices only</p>
+    <button class="primary-btn">Pay with Apple Pay</button>
+  </div>
+
+</div>
+</main>
+
+<script>
+function hideAll(){
+  document.querySelectorAll('.payment-box').forEach(b=>b.style.display='none');
+}
+function showCard(){ hideAll(); cardBox.style.display='block'; }
+function showUPI(){ hideAll(); upiBox.style.display='block'; }
+function showPayPal(){ hideAll(); paypalBox.style.display='block'; }
+function showApple(){ hideAll(); appleBox.style.display='block'; }
+
+function formatExpiry(input){
+  let v=input.value.replace(/\D/g,'');
+  if(v.length>=3) v=v.slice(0,2)+'/'+v.slice(2,4);
+  input.value=v;
+}
+function formatCardNumber(input){
+  let v=input.value.replace(/\D/g,'').match(/.{1,4}/g);
+  input.value=v?v.join(' '):'';
+}
+
+
+/* ONLY TEXT (A-Z + SPACE) */
+function onlyText(input) {
+  input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+}
+
+/* ONLY NUMBERS */
+function onlyNumbers(input) {
+  input.value = input.value.replace(/\D/g, "");
+}
+
+
+function upiPay(){
+  if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
+    window.location.href =
+      "upi://pay?pa=omkardubole46@oksbi&pn=GreenCharge&am=10&cu=INR";
+  } else {
+    alert("UPI payment works only on mobile device");
+  }
+}
+
+
+</script>
+<script src="auth.js"></script>
+
+</body>
+</html>

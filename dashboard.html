@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCharge | Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="topbar">
+  <div class="logo">
+     <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="48" fill="#1fa36b"/>
+    <path d="M55 15 L35 55 H50 L45 85 L70 45 H55 Z" fill="#ffffff"/>
+    <path d="M30 65 C30 55 45 50 50 45 C55 50 70 55 70 65
+             C70 78 50 85 50 85 C50 85 30 78 30 65 Z"
+          fill="#b7f3d0"/>
+  </svg>
+    <span>GreenCharge</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="stations.html">Nearby Stations</a>
+    <a href="history.html">History</a>
+    <a href="about.html">About</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </nav>
+</header></h2>
+      
+    </div>
+  </div>
+
+  <!-- DASHBOARD CONTENT -->
+  <div class="container" style="margin-top:30px;">
+    <h2>Welcome to GreenCharge 👋</h2>
+    <p style="margin-top:10px; color:#6b7280;">
+      Manage your EV charging, find nearby stations, and track your history.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Nearby Charging Stations</h3>
+        <p>Find EV charging stations near your location.</p>
+        <br />
+        <a href="stations.html" class="btn btn-primary">View Stations</a>
+      </div>
+
+      <div class="card">
+        <h3>Book a Charging Slot</h3>
+        <p>Reserve a charging slot in advance.</p>
+        <br />
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Charging History</h3>
+        <p>View your previous charging sessions.</p>
+        <br />
+        <a href="history.html" class="btn btn-primary">View History</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH SCRIPT -->
+  <script src="auth.js"></script>
+
+  
+
+  <!-- FOOTER -->
+<div class="footer">
+  <strong>GreenCharge • 24×7 Support</strong>
+  <span>📧 support@greencharge.com | 📞 +91 98765 43210</span>
+</div>
+</body>
+</html>

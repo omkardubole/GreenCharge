@@ -1,0 +1,198 @@
+<!-- FILE: about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCharge | About</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== ABOUT PAGE STYLES ===== */
+
+    body {
+      background: linear-gradient(
+          rgba(255,255,255,0.9),
+          rgba(255,255,255,0.9)
+        ),
+        url("https://images.unsplash.com/photo-1549399542-7e3f8b79c341");
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .about-container h1 {
+      color: #1fa36b;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .about-container h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .about-container p {
+      line-height: 1.8;
+      color: #374151;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .about-container ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .about-container ul li {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        margin: 30px 15px;
+        padding: 25px;
+      }
+    }
+
+    .contact-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(
+      rgba(255,255,255,0.95),
+      rgba(255,255,255,0.95)
+    ),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
+  background-size: cover;
+  border-radius: 12px;
+}
+
+.contact-box div {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  font-size: 15px;
+}
+
+.SUPPORT {
+  margin-right: 10px;
+  margin-left: 15px;
+  display: inline-block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.Contact {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+  </style>
+</head>
+<body>
+
+ <header class="topbar">
+  <div class="logo">
+    <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="48" fill="#1fa36b"/>
+    <path d="M55 15 L35 55 H50 L45 85 L70 45 H55 Z" fill="#ffffff"/>
+    <path d="M30 65 C30 55 45 50 50 45 C55 50 70 55 70 65
+             C70 78 50 85 50 85 C50 85 30 78 30 65 Z"
+          fill="#b7f3d0"/>
+  </svg>
+    <span>GreenCharge</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="stations.html">Nearby Stations</a>
+    <a href="history.html">History</a>
+    <a href="about.html">About</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </nav>
+</header>
+      </div>
+  </div>
+
+  <!-- ABOUT CONTENT -->
+  <div class="about-container">
+    <h1>About GreenCharge</h1>
+    <p>
+      GreenCharge is a smart electric vehicle charging platform designed to
+      simplify EV charging by helping users find nearby charging stations,
+      book charging slots, and manage payments seamlessly.
+    </p>
+
+    <h2>🌱 Our Mission</h2>
+    <p>
+      Our mission is to promote sustainable transportation by making
+      EV charging accessible, reliable, and user-friendly for everyone.
+    </p>
+
+    <h2>⚡ Why GreenCharge?</h2>
+    <ul>
+      <li>Easy discovery of nearby EV charging stations</li>
+      <li>Smart booking system with flexible time slots</li>
+      <li>User-friendly and secure interface</li>
+      <li>Supports clean and green energy goals</li>
+    </ul>
+
+    <h2>📌 Project Note</h2>
+    <p>
+      This website is a frontend prototype developed for academic purposes.
+      Backend services, real payments, and live databases can be integrated
+      in future versions of the platform.
+    </p>
+  </div>
+
+  <script src="auth.js"></script>
+
+  
+<!-- CONTACT SECTION -->
+<h2 class="Contact">📞 Contact Us (24×7 Support)</h2>
+<p class="SUPPORT">
+  We are available 24×7 to assist you with charging station queries,
+  bookings, and technical support.
+</p>
+
+<div class="contact-box">
+  <div>
+    <strong>📧 Email</strong><br />
+    support@greencharge.com
+  </div>
+
+  <div>
+    <strong>📞 Phone</strong><br />
+    +91 98765 43210
+  </div>
+
+  <div>
+    <strong>📍 Address</strong><br />
+    Mumbai, Maharashtra, India
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>GreenCharge • 24×7 Support</strong>
+  <span>📧 support@greencharge.com | 📞 +91 98765 43210</span>
+</div>
+</body>
+</html>

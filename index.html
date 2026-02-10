@@ -1,0 +1,157 @@
+<!-- FILE: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCharge | Login</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== LOGIN PAGE PROFESSIONAL FIX ===== */
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #eaf7f1, #f6fffb);
+    }
+
+    .auth-card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .auth-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .auth-logo h2 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .tagline {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .auth-card input {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+    }
+
+    .auth-card input:focus {
+      outline: none;
+      border-color: #1fa36b;
+    }
+
+    .auth-card .btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .auth-footer {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .auth-footer a {
+      color: #1fa36b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 44px;   /* 👈 eye ke liye space */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  
+  line-height: 48px;
+  padding-bottom: 38px;
+  cursor: pointer;
+  opacity: 0.6;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+
+  <div class="auth-card">
+
+    <!-- LOGO -->
+    <div class="auth-logo">
+      <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#1fa36b"/>
+        <path d="M55 15 L35 55 H50 L45 85 L70 45 H55 Z" fill="#ffffff"/>
+        <path d="M30 65 C30 55 45 50 50 45 C55 50 70 55 70 65
+                 C70 78 50 85 50 85 C50 85 30 78 30 65 Z"
+              fill="#b7f3d0"/>
+      </svg>
+      <h2>GreenCharge</h2>
+    </div>
+
+    <!-- TAGLINE -->
+    <p class="tagline">Powering a Greener Tomorrow</p>
+
+    <!-- LOGIN FORM -->
+    <input type="text" id="email" placeholder="Email or Mobile" required />
+    <div class="password-field">
+  <input 
+    type="password"
+    id="password"
+    placeholder="Password"
+    required
+  />
+  <span class="toggle-password" onclick="togglePassword()"></span>
+</div>
+
+    <button class="btn btn-primary" onclick="login()">Login</button>
+
+    <!-- FOOTER -->
+    <div class="auth-footer">
+      Don’t have an account?
+      <a href="#" onclick="signup()">Sign Up</a>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

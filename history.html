@@ -1,0 +1,167 @@
+<!-- FILE: history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenCharge | Charging History</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== Responsive Table Styling ===== */
+
+    .table-wrapper {
+      margin-top: 20px;
+      overflow-x: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background: #eaf7f1;
+      color: #158055;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: #f5f9f7;
+    }
+
+    /* Mobile Card View */
+    @media (max-width: 768px) {
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 10px;
+        background: #ffffff;
+      }
+
+      td {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #158055;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+ <header class="topbar">
+  <div class="logo">
+    <svg width="34" height="34" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" fill="#1fa36b"/>
+      <path d="M55 15 L35 55 H50 L45 85 L70 45 H55 Z" fill="#ffffff"/>
+      <path d="M30 65 C30 55 45 50 50 45 C55 50 70 55 70 65
+               C70 78 50 85 50 85 C50 85 30 78 30 65 Z"
+            fill="#b7f3d0"/>
+    </svg>
+    <span>GreenCharge</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="stations.html">Nearby Stations</a>
+    <a href="history.html" class="active">History</a>
+    <a href="about.html">About</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+  <!-- CONTENT -->
+  <div class="container" style="margin-top:30px;">
+    <h2>Charging History</h2>
+    <p style="margin-top:8px; color:#6b7280;">
+      View details of your past charging sessions.
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Station</th>
+            <th>Duration</th>
+            <th>Energy Used</th>
+            <th>Amount Paid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Date">02 Feb 2026</td>
+            <td data-label="Station">Andheri EV Hub</td>
+            <td data-label="Duration">45 mins</td>
+            <td data-label="Energy Used">18 kWh</td>
+            <td data-label="Amount Paid">₹360</td>
+          </tr>
+
+          <tr>
+            <td data-label="Date">28 Jan 2026</td>
+            <td data-label="Station">Bandra Charging Point</td>
+            <td data-label="Duration">30 mins</td>
+            <td data-label="Energy Used">12 kWh</td>
+            <td data-label="Amount Paid">₹240</td>
+          </tr>
+
+          <tr>
+            <td data-label="Date">22 Jan 2026</td>
+            <td data-label="Station">Powai Green Charge</td>
+            <td data-label="Duration">60 mins</td>
+            <td data-label="Energy Used">22 kWh</td>
+            <td data-label="Amount Paid">₹440</td>
+          </tr>
+
+          <tr>
+            <td data-label="Date">15 Jan 2026</td>
+            <td data-label="Station">Goregaon EV Hub</td>
+            <td data-label="Duration">40 mins</td>
+            <td data-label="Energy Used">16 kWh</td>
+            <td data-label="Amount Paid">₹320</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+
+  <!-- FOOTER -->
+<div class="footer">
+  <strong>GreenCharge • 24×7 Support</strong>
+  <span>📧 support@greencharge.com | 📞 +91 98765 43210</span>
+</div>
+</body>
+</html>
